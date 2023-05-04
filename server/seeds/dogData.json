@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Leon",
+        "size": "Small",
+        "activity": "Active",
+        "training": "Don't remember"
+    },
+    {
+        "name": "Cloud",
+        "size": "Small",
+        "activity": "Not Active",
+        "training": "Don't remember"
+    },
+    {
+        "name": "Aertih",
+        "size": "Large",
+        "activity": "Very Active",
+        "training": "Don't remember"
+    },
+    {
+        "name": "Yunalesca",
+        "size": "Medium",
+        "activity": "Somewhat Active",
+        "training": "Don't remember"
+    }
+]

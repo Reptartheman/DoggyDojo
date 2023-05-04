@@ -1,12 +1,10 @@
-const { User, Dog } = require('../models');
+const { User } = require('../models');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({});
-    },
-    dogs: async () => {
-      return await Dog.find({});
+      const anything = await User.find({});
+      return anything;
     }
   }
 };

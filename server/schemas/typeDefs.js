@@ -5,21 +5,10 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    # Add a queryable field to retrieve an array of Class objects
-    dogInfo: [Dog]
-  }
-
-  type Dog {
-    _id: ID
-    name: String
-    size: String
-    activity: String
-    training: String
   }
 
   type Query {
     users: [User]
-    dogs: [Dog]
   }
 `;
 
