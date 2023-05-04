@@ -1,9 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Dog.js
-const dogSchema = require('./Dog');
-
 const userSchema = new Schema(
   {
     username: {
@@ -22,7 +19,12 @@ const userSchema = new Schema(
       required: true,
     },
     // set dogInfo to be an array of data that adheres to the dogSchema
-    dogInfo: [dogSchema],
+    dogs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Dog'
+      }
+    ]
   },
   // set this to use virtual below
   {
