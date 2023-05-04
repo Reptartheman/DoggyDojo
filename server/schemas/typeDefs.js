@@ -6,6 +6,7 @@ const typeDefs = gql`
     username: String
     email: String
     dogs: [Dog]
+    notes: Note
   }
 
   type Dog {
@@ -16,9 +17,17 @@ const typeDefs = gql`
     training: String
   }
 
+  type Note {
+    _id: ID
+    thoughtText: String
+    editedAt: String
+    score: Int
+  }
+
   type Query {
     users: [User]
     dogs: [Dog]
+    notes: [Note]
   }
 `;
 
