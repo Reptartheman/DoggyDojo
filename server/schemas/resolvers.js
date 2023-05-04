@@ -4,7 +4,8 @@ const resolvers = {
   Query: {
     users: async () => {
       const users = await User.find({})
-      .populate('dogs');
+      .populate('dogs')
+      .populate('notes');
       return users;
     },
     dogs: async () => {

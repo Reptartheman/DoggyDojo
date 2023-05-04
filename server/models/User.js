@@ -24,6 +24,12 @@ const userSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Dog'
       }
+    ],
+    notes: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Note'
+      }
     ]
   },
   // set this to use virtual below
