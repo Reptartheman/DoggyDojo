@@ -1,17 +1,14 @@
 [
     {
-        "thoughtText": "Testing for my thoughts",
-        "editedAt": "May 4, 2023 at 7:04pm",
+        "text": "Testing for my thoughts",
         "score": 9
     },
     {
-        "thoughtText": "Testing for my thoughts 2",
-        "editedAt": "May 5, 2023 at 8:04pm",
+        "text": "Testing for my thoughts 2",
         "score": 6
     },
     {
-        "thoughtText": "Testing for my thoughts 3",
-        "editedAt": "May 6, 2023 at 9:04pm",
+        "text": "Testing for my thoughts 3",
         "score": 3
     }
 ]
