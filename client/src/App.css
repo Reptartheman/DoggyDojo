@@ -14,19 +14,49 @@
   
   }
 
+    /* navbar css */
+    .header {
+      margin-top: 0.25em;
+      padding-left: 0.25em;
+      background-color: var(--colorTwo);
+      border: var(--border);
+      border-radius: 7px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  
+    header h1 {
+      font-family: var(--mainFont);
+      color: var(--colorSix);
+      font-weight: lighter;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+  
+    header h2 {
+      font-family: var(--mainFont);
+      color: var(--colorSix);
+      font-weight: lighter;
+      font-size: 1.5em;
+    }
+  
+  .button-container{
+      display: flex;
+      justify-content: space-evenly;
+  }  
+    
+  .navButtons {
+      border-radius: 6px;
+      color: var(--colorSix);
+      background-color: var(--colorFour);
+      font-family: var(--fontTwo);
+      font-size: 24px;
+      width: 15%;
+    }
 
-  /* iPhone 12 Portrait */
-@media only screen and (min-width: 375px) and (max-width: 844px) and (orientation: portrait) {
-    /* Your CSS styling for iPhone 12 in portrait orientation */
-  }
-  
-  /* iPhone 12 Landscape */
-  @media only screen and (min-width: 844px) and (max-width: 375px) and (orientation: landscape) {
-    /* Your CSS styling for iPhone 12 in landscape orientation */
-  }
-  
-  /* navbar css */
-  .header {
+  .pagefooter{
     margin-top: 0.25em;
     padding-left: 0.25em;
     background-color: var(--colorTwo);
@@ -38,31 +68,22 @@
     flex-wrap: wrap;
   }
 
-  header h1 {
+  .footerInfo{
     font-family: var(--mainFont);
     color: var(--colorSix);
     font-weight: lighter;
-    font-size: 3em;
+    font-size: 1em;
     margin-bottom: 10px;
   }
 
-  header h2 {
-    font-family: var(--mainFont);
-    color: var(--colorSix);
-    font-weight: lighter;
-    font-size: 1.5em;
-  }
 
-.button-container{
-    display: flex;
-    justify-content: space-evenly;
-}  
-  
-.navButtons {
-    border-radius: 6px;
-    color: var(--colorSix);
-    background-color: var(--colorFour);
-    font-family: var(--fontTwo);
-    font-size: 24px;
-    width: 15%;
+  /* iPhone 12 Portrait */
+@media only screen and (min-width: 375px) and (max-width: 844px) and (orientation: portrait) {
+    /* Your CSS styling for iPhone 12 in portrait orientation */
   }
+  
+  /* iPhone 12 Landscape */
+  @media only screen and (min-width: 844px) and (max-width: 375px) and (orientation: landscape) {
+    /* Your CSS styling for iPhone 12 in landscape orientation */
+  }
+  

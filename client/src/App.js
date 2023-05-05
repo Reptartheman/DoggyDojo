@@ -1,8 +1,19 @@
-import React from 'react' 
+import React from 'react';
 import './App.css';
-import ProjectContainer from './components/ProjectContainer';
+import Header from './components/Header';
+import Footer from './components/footer';
 
 
-const App = () => <ProjectContainer />
+const App = () => {
+    return (
+        <div>
+            <Header />
+
+            <Footer />
+
+
+        </div>
+    )
+}
 
 export default App;
