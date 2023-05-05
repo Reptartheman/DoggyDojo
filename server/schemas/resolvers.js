@@ -7,9 +7,6 @@ const resolvers = {
       .populate('dogs')
       .populate('notes');
       return users;
-    },
-    dogs: async () => {
-      return await Dog.find({})
     }
   }
 };
