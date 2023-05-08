@@ -5,7 +5,7 @@ import GitHubIcon from '../assets/github-sign.png';
 export default function Footer() {
   return (
     <footer className="pagefooter">
-      <div>
+      <div id="gitHubIcon">
         <a href="https://github.com/Reptartheman/DoggyDojo" target={'_blank'}>
           <img src={GitHubIcon} alt="GitHubLink" width="50" height="50"></img>
         </a>
