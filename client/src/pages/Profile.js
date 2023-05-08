@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
+import Quiz from '../components/Quiz';
 
 export default function Login() {
-  return <h1>Profile Test</h1>;
+  return (
+    <div>
+      <h1>Profile Test</h1>
+      {/* TODO: Need to code some kind of logic for there to be a button on the profile page that takes you to the quiz. So the Quiz component will likely not live on this page, but within a button component? */}
+      <Quiz />
+    </div>
+  );
 }
 
 // import React from 'react';
