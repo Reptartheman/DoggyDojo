@@ -1,5 +1,5 @@
-import React from 'react';
-import '../App.css';
+import React from "react";
+import "../App.css";
 
 export default function Header({ currentPage, handlePageChange }) {
   return (
@@ -14,30 +14,30 @@ export default function Header({ currentPage, handlePageChange }) {
         <button
           type="button"
           className="navButtons"
-          onClick={() => handlePageChange('Homepage')}
+          onClick={() => handlePageChange("Homepage")}
         >
           Homepage
         </button>
         <button
           type="button"
           className="navButtons"
-          onClick={() => handlePageChange('Login')}
+          onClick={() => handlePageChange("Profile")}
+        >
+          Profile
+        </button>
+        <button
+          type="button"
+          className="navButtons"
+          onClick={() => handlePageChange("Login")}
         >
           Login
         </button>
         <button
           type="button"
           className="navButtons"
-          onClick={() => handlePageChange('Signup')}
+          onClick={() => handlePageChange("Signup")}
         >
           Signup
-        </button>
-        <button
-          type="button"
-          className="navButtons"
-          onClick={() => handlePageChange('Profile')}
-        >
-          Profile
         </button>
       </nav>
     </header>
