@@ -2,88 +2,119 @@
 @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Titan+One&display=swap');
 
 :root {
-    --border: 3px solid #407ba5;
-    --colorOne: #264653;
-    --colorTwo: #2A9D8F;
-    --colorThree: #E9C46A;
-    --colorFour: #F4A261;
-    --colorFive: #E76F51;
-    --colorSix: white;
-    --mainFont: 'Titan One', cursive;
-    --fontTwo: 'Bubblegum Sans', cursive
-  
-  }
+  --border: 3px solid #407ba5;
+  --colorOne: #264653;
+  --colorTwo: #2a9d8f;
+  --colorThree: #e9c46a;
+  --colorFour: #f4a261;
+  --colorFive: #e76f51;
+  --colorSix: white;
+  --mainFont: 'Titan One', cursive;
+  --fontTwo: 'Bubblegum Sans', cursive;
+}
 
-    /* navbar css */
-    .header {
-      margin-top: 0.25em;
-      padding-left: 0.25em;
-      background-color: var(--colorTwo);
-      border: var(--border);
-      border-radius: 7px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-    }
-  
-    header h1 {
-      font-family: var(--mainFont);
-      color: var(--colorSix);
-      font-weight: lighter;
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-  
-    header h2 {
-      font-family: var(--mainFont);
-      color: var(--colorSix);
-      font-weight: lighter;
-      font-size: 1.5em;
-    }
-  
-  .button-container{
-      display: flex;
-      justify-content: space-evenly;
-  }  
-    
-  .navButtons {
-      border-radius: 6px;
-      color: var(--colorSix);
-      background-color: var(--colorFour);
-      font-family: var(--fontTwo);
-      font-size: 24px;
-      width: 15%;
-    }
+/* navbar css */
+.header {
+  margin-top: 0.25em;
+  padding-left: 0.25em;
+  background-color: var(--colorTwo);
+  border: var(--border);
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 
-  .pagefooter{
-    margin-top: 0.25em;
-    padding-left: 0.25em;
-    background-color: var(--colorTwo);
-    border: var(--border);
-    border-radius: 7px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
+header h1 {
+  font-family: var(--mainFont);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
 
-  .footerInfo{
-    font-family: var(--mainFont);
-    color: var(--colorSix);
-    font-weight: lighter;
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
+header h2 {
+  font-family: var(--mainFont);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 1.5em;
+}
 
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
 
-  /* iPhone 12 Portrait */
+.navButtons {
+  border-radius: 6px;
+  color: var(--colorSix);
+  background-color: var(--colorFour);
+  font-family: var(--fontTwo);
+  font-size: 24px;
+  width: 15%;
+}
+
+.pagefooter {
+  margin-top: 0.25em;
+  padding-left: 0.25em;
+  background-color: var(--colorTwo);
+  border: var(--border);
+  border-radius: 7px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.footerInfo {
+  font-family: var(--mainFont);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+/* iPhone 12 Portrait */
 @media only screen and (min-width: 375px) and (max-width: 844px) and (orientation: portrait) {
-    /* Your CSS styling for iPhone 12 in portrait orientation */
-  }
-  
-  /* iPhone 12 Landscape */
-  @media only screen and (min-width: 844px) and (max-width: 375px) and (orientation: landscape) {
-    /* Your CSS styling for iPhone 12 in landscape orientation */
-  }
-  
+  /* Your CSS styling for iPhone 12 in portrait orientation */
+}
+
+/* iPhone 12 Landscape */
+@media only screen and (min-width: 844px) and (max-width: 375px) and (orientation: landscape) {
+  /* Your CSS styling for iPhone 12 in landscape orientation */
+}
+
+/* Quiz Component */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 20px auto;
+  max-width: 80%;
+  height: auto;
+  border: var(--border);
+  border-radius: 7px;
+  color: var(--colorSix);
+  background-color: var(--colorFour);
+  font-family: var(--fontTwo);
+  font-size: 24px;
+}
+.quiz-contents {
+  text-align: center;
+  padding: 0 25px;
+}
+.quiz-container ul {
+  padding: 0;
+  list-style: none;
+}
+.quiz-container li {
+  border-radius: 6px;
+  background-color: #2a9d8f;
+  margin-top: 8px;
+  padding: 16px;
+  border: 3px solid white;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}

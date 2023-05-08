@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import Note from './components/Note';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
 import Profile from './pages/Profile';
+import Signup from './pages/Signup';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Homepage');

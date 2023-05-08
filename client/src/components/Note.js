@@ -1,113 +1,119 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import "../App.css";
+import React from 'react';
 
-import { ADD_NOTE } from '../utils/mutations';
-import { QUERY_NOTE, QUERY_ME } from '../utils/queries';
+export default function Note() {
+  return null;
+}
 
-import Auth from '../utils/auth';
+// import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { useMutation } from '@apollo/client';
+// import "../App.css";
 
-const noteForm = () => {
-  const [noteText, setNoteText] = useState('');
+// import { ADD_NOTE } from '../utils/mutations';
+// import { QUERY_NOTE, QUERY_ME } from '../utils/queries';
 
-  const [characterCount, setCharacterCount] = useState(0);
+// import Auth from '../utils/auth';
 
-  const [addNote, { error }] = useMutation(ADD_NOTE, {
-    update(cache, { data: { addNote } }) {
-      try {
-        const { notes } = cache.readQuery({ query: QUERY_NOTE });
+// const noteForm = () => {
+//   const [noteText, setNoteText] = useState('');
 
-        cache.writeQuery({
-          query: QUERY_NOTE,
-          data: { notes: [addNote, ...notes] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
+//   const [characterCount, setCharacterCount] = useState(0);
 
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, notes: [...me.notes, addNote] } },
-      });
-    },
-  });
+//   const [addNote, { error }] = useMutation(ADD_NOTE, {
+//     update(cache, { data: { addNote } }) {
+//       try {
+//         const { notes } = cache.readQuery({ query: QUERY_NOTE });
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+//         cache.writeQuery({
+//           query: QUERY_NOTE,
+//           data: { notes: [addNote, ...notes] },
+//         });
+//       } catch (e) {
+//         console.error(e);
+//       }
 
-    try {
-      const { data } = await addNote({
-        variables: {
-          noteText,
-        },
-      });
+//       // update me object's cache
+//       const { me } = cache.readQuery({ query: QUERY_ME });
+//       cache.writeQuery({
+//         query: QUERY_ME,
+//         data: { me: { ...me, notes: [...me.notes, addNote] } },
+//       });
+//     },
+//   });
 
-      setNoteText('');
-    } catch (err) {
-      console.error(err);
-    }
-  };
+//   const handleFormSubmit = async (event) => {
+//     event.preventDefault();
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+//     try {
+//       const { data } = await addNote({
+//         variables: {
+//           noteText,
+//         },
+//       });
 
-    if (name === 'noteText' && value.length <= 280) {
-      setNoteText(value);
-      setCharacterCount(value.length);
-    }
-  };
+//       setNoteText('');
+//     } catch (err) {
+//       console.error(err);
+//     }
+//   };
 
-  return (
-    <div>
-      <h3>Track your dog's progress...</h3>
+//   const handleChange = (event) => {
+//     const { name, value } = event.target;
 
-      {Auth.loggedIn() ? (
-        <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
-          <form
-            className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={handleFormSubmit}
-          >
-            <div className="col-12 col-lg-9">
-              <textarea
-                name="noteText"
-                placeholder="Today's progress..."
-                value={noteText}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
-                onChange={handleChange}
-              ></textarea>
-            </div>
+//     if (name === 'noteText' && value.length <= 280) {
+//       setNoteText(value);
+//       setCharacterCount(value.length);
+//     }
+//   };
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Note
-              </button>
-            </div>
-            {error && (
-              <div className="col-12 my-3 bg-danger text-white p-3">
-                {error.message}
-              </div>
-            )}
-          </form>
-        </>
-      ) : (
-        <p>
-          You need to be logged in. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
-        </p>
-      )}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h3>Track your dog's progress...</h3>
 
-export default noteForm;
+//       {Auth.loggedIn() ? (
+//         <>
+//           <p
+//             className={`m-0 ${
+//               characterCount === 280 || error ? 'text-danger' : ''
+//             }`}
+//           >
+//             Character Count: {characterCount}/280
+//           </p>
+//           <form
+//             className="flex-row justify-center justify-space-between-md align-center"
+//             onSubmit={handleFormSubmit}
+//           >
+//             <div className="col-12 col-lg-9">
+//               <textarea
+//                 name="noteText"
+//                 placeholder="Today's progress..."
+//                 value={noteText}
+//                 className="form-input w-100"
+//                 style={{ lineHeight: '1.5', resize: 'vertical' }}
+//                 onChange={handleChange}
+//               ></textarea>
+//             </div>
+
+//             <div className="col-12 col-lg-3">
+//               <button className="btn btn-primary btn-block py-3" type="submit">
+//                 Add Note
+//               </button>
+//             </div>
+//             {error && (
+//               <div className="col-12 my-3 bg-danger text-white p-3">
+//                 {error.message}
+//               </div>
+//             )}
+//           </form>
+//         </>
+//       ) : (
+//         <p>
+//           You need to be logged in. Please{' '}
+//           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+//         </p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default noteForm;
