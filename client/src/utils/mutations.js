@@ -32,15 +32,13 @@ export const ADD_DOG = gql`
       activity
       training
     }
-  }
 `;
 
 export const ADD_NOTE = gql`
-  mutation addNote($noteId: ID!, $noteText: String!) { {
+  mutation addNote($noteId: ID!, $noteText: String!) {
       _id
       text
       createdAt
       score
     }
-  }
 `;
