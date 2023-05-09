@@ -24,8 +24,18 @@ const typeDefs = gql`
     score: Int
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     users: [User]
+  }
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    addDog(name: String!, size: String!, activity: String!, training: String!): Dog
   }
 `;
 
