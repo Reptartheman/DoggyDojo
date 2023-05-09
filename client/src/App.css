@@ -80,6 +80,57 @@ header h2 {
   padding-top: 0.5em;
 }
 
+/* -------PROFILE CSS ------- */
+
+.errorContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-family: var(--mainFont);
+  color: var(--colorFive);
+  font-weight: lighter;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.errorContainer img {
+  border-radius: 20%;
+  border: var(--border);
+  width: 550px;
+  height: 550px;
+  filter: opacity(70%);
+}
+
+#pleaseLogin{
+  position: absolute;
+  top: 50%; 
+  left: 45%; 
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+#pleaseLogin::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px; 
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+
 /* -----------Login Form----------- */
 
 .loginContainer {
