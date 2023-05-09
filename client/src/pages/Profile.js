@@ -19,6 +19,7 @@ import Checklist from '../components/Checklist';
 import Note from '../components/Note';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import Rocco from '../assets/Rocco.jpeg'
 
 import Auth from '../utils/auth';
 
@@ -41,10 +42,16 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
+      <div className="errorContainer">
       <h4>
-        You need to be logged in to see this. Use the navigation links above to
+        WOOF WOOF! You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
+      <div>
+      <img src={Rocco}></img>
+      <p id="pleaseLogin">Please login...</p>
+      </div>
+      </div>
     );
   }
 

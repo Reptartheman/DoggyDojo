@@ -42,7 +42,6 @@ export default function Signup() {
   return (
     <section>
       <div className="loginContainer">
-        <div className="card-body">
           {data ? (
             <p>
               Success! You may now head <Link to="/me">to your profile.</Link>
@@ -103,7 +102,6 @@ export default function Signup() {
             <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
           )}
         </div>
-      </div>
     </section>
   );
 }
