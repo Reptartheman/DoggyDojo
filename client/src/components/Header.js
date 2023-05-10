@@ -19,21 +19,33 @@ export default function Header() {
             Homepage
           </button>
         </Link>
-        <Link to="/me" as={Link}>
-          <button type="button" className="navButtons">
-            Profile
-          </button>
-        </Link>
-        <Link to="login" as={Link}>
-          <button type="button" className="navButtons">
-            Login
-          </button>
-        </Link>
-        <Link to="/signup" as={Link}>
-          <button type="button" className="navButtons">
-            Sign Up
-          </button>
-        </Link>
+        {Auth.loggedIn() ? (
+          <>
+            <Link to="/me" as={Link}>
+              <button type="button" className="navButtons">
+                Profile
+              </button>
+            </Link>
+            <Link onClick={Auth.logout}>
+              <button type="button" className="navButtons">
+                Logout
+              </button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link to="login" as={Link}>
+              <button type="button" className="navButtons">
+                Login
+              </button>
+            </Link>
+            <Link to="/signup" as={Link}>
+              <button type="button" className="navButtons">
+                Sign Up
+              </button>
+            </Link>
+          </>
+        )}
       </nav>
     </header>
   );
