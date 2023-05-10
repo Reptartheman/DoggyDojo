@@ -47,10 +47,10 @@ const Profile = () => {
         WOOF WOOF! You need to be logged in to see this. Use the navigation links above to
         sign up or log in!
       </h4>
-      <div>
+      
       <img src={Rocco}></img>
       <p id="pleaseLogin">Please login...</p>
-      </div>
+      
       </div>
     );
   }
