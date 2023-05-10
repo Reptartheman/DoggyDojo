@@ -15,8 +15,6 @@
 
 /* navbar css */
 .header {
-  margin-top: 0.25em;
-  padding-left: 0.25em;
   background-color: var(--colorTwo);
   border: var(--border);
   border-radius: 7px;
@@ -52,13 +50,14 @@ header h2 {
   color: var(--colorSix);
   background-color: var(--colorFour);
   font-family: var(--fontTwo);
-  font-size: 24px;
+  font-size: 2vw;
   width: 125%;
 }
 
+/* ----- FOOTER CSS ----- */
+
+
 .pagefooter {
-  margin-top: 0.25em;
-  padding-left: 0.25em;
   background-color: var(--colorTwo);
   border: var(--border);
   border-radius: 7px;
@@ -79,6 +78,55 @@ header h2 {
 #gitHubIcon {
   padding-top: 0.5em;
 }
+
+
+/* ------ HOME PAGE CSS ------ */
+
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 0%;
+  }
+
+.gridItem1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--colorOne);
+  border: solid var(--colorTwo);
+  border-radius: 3px;
+  grid-column: 2.3fr;
+  grid-row: 1fr;
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 150%;
+  padding: 3%;
+}
+
+.gridItem2 {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colorOne);
+  border: solid var(--colorTwo);
+  border-radius: 3px;
+  grid-column: 1fr;
+  grid-row: 1fr;
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 125%;
+  padding: 3%;
+}
+
+
+
+
 
 /* -------PROFILE CSS ------- */
 
@@ -147,7 +195,7 @@ header h2 {
   margin: 50px 0;
   border: solid var(--colorThree);
   border-radius: 7px;
-  width: 35%;
+  width: 55vw;
 }
 
 #contact h3 {
@@ -229,7 +277,12 @@ fieldset {
 }
 
 /* iPhone 12 Portrait */
-@media only screen and (min-width: 355px) and (max-width: 844px) and (orientation: portrait) {
+@media only screen and (min-width: 100px) and (max-width: 844px) and (orientation: portrait) {
+  .header{
+    width: 100%;
+  }
+  
+  
   header h1 {
     font-size: x-large;
     text-align: center;
@@ -250,14 +303,157 @@ fieldset {
     justify-content: center;
     background-color: var(--colorFour);
     color: var(--colorSix);
-    font-size: medium;
+    font-size: 4vw;
     font-family: var(--fontTwo);
     font-weight: bolder;
     width: 5em;
     cursor: pointer;
   }
 
-  /* Your CSS styling for iPhone 12 in portrait orientation */
+/* ----- FOOTER ----- */
+  .pagefooter {
+    width: 100%;
+    background-color: var(--colorTwo);
+    border: var(--border);
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .footerInfo {
+    font-family: var(--mainFont);
+    color: var(--colorSix);
+    font-weight: lighter;
+    font-size: 2.5vw;
+    margin-bottom: 10px;
+  }
+  
+  #gitHubIcon {
+    padding-top: 0.5em;
+  }
+
+
+  fieldset {
+    border: medium none !important;
+    margin: 0 0 10px;
+    min-width: 75%;
+    padding: 0;
+    width: 85%;
+  }
+
+  #contact button[type='submit'] {
+    border-radius: 6px;
+    color: var(--colorSix);
+    background-color: var(--colorFour);
+    font-family: var(--fontTwo);
+    font-size: 24px;
+    width: 75%;
+    padding-top: 0.3em;
+    padding-bottom: 0.2em;
+  }
+
+  #contact {
+    background-color: var(--colorOne);
+    padding: 25px;
+    margin: 50px 0;
+    border: solid var(--colorThree);
+    border-radius: 7px;
+    width: 75%;
+  }
+
+  /* ------ HOME PAGE CSS ------ */
+
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  gap: 0%;
+  }
+
+.gridItem1 {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--colorOne);
+  border: solid var(--colorTwo);
+  border-radius: 3px;
+  grid-column: 2.3fr;
+  grid-row: 1fr;
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 150%;
+  padding: 3%;
+}
+
+.gridItem2 {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colorOne);
+  border: solid var(--colorTwo);
+  border-radius: 3px;
+  grid-column: 1fr;
+  grid-row: 1fr;
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
+  font-weight: lighter;
+  font-size: 125%;
+  padding: 3%;
+}
+
+  /* ----- PROFILE PRELOGIN ----- */
+
+  .errorContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    font-family: var(--mainFont);
+    color: var(--colorFive);
+    font-weight: lighter;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .errorContainer img {
+    border-radius: 20%;
+    border: var(--border);
+    width: 90vw;
+    height: 90vw;
+    filter: opacity(70%);
+  }
+  
+  #pleaseLogin {
+    position: absolute;
+    top: 56%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    font-size: 3vw;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  #pleaseLogin::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.7);
+  }
+
 }
 
 /* iPhone 12 Landscape */
