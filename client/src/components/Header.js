@@ -26,7 +26,7 @@ export default function Header() {
                 Profile
               </button>
             </Link>
-            <Link onClick={Auth.logout}>
+            <Link to='/' as={Link} onClick={Auth.logout}>
               <button type="button" className="navButtons">
                 Logout
               </button>
