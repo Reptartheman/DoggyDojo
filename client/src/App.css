@@ -13,6 +13,16 @@
   --fontTwo: 'Bubblegum Sans', cursive;
 }
 
+html {
+  height: 100%;
+  background-color: #407ba5;
+}
+
+body {
+  margin: 1%;
+  margin-top: 2%;
+}
+
 /* navbar css */
 .header {
   background-color: var(--colorTwo);
@@ -85,7 +95,7 @@ header h2 {
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 2.3fr 1fr;
+  grid-template-columns: 2fr .5fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -95,17 +105,36 @@ header h2 {
 .gridItem1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background-color: var(--colorOne);
   border: solid var(--colorTwo);
   border-radius: 3px;
-  grid-column: 2.3fr;
+  grid-column: 2fr;
   grid-row: 1fr;
   font-family: var(--fontTwo);
   color: var(--colorSix);
   font-weight: lighter;
   font-size: 150%;
   padding: 3%;
+}
+
+.gridItem1 h1 {
+  font-size: 200%;
+}
+
+.headingImg {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row-reverse;
+  text-decoration: underline;
+}
+
+.headingImg img {
+  transform: rotate(15deg);
+}
+
+.gridImg {
+  width: 25%;
 }
 
 .gridItem2 {
@@ -115,7 +144,7 @@ header h2 {
   background-color: var(--colorOne);
   border: solid var(--colorTwo);
   border-radius: 3px;
-  grid-column: 1fr;
+  grid-column: .5fr;
   grid-row: 1fr;
   font-family: var(--fontTwo);
   color: var(--colorSix);
@@ -123,6 +152,7 @@ header h2 {
   font-size: 125%;
   padding: 3%;
 }
+
 
 
 
@@ -136,8 +166,8 @@ header h2 {
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  font-family: var(--mainFont);
-  color: var(--colorFive);
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
   font-weight: lighter;
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -157,7 +187,7 @@ header h2 {
   left: 45%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--colorTwo);
   border-radius: 5px;
   font-size: 16px;
   line-height: 1.5;
@@ -278,6 +308,12 @@ fieldset {
 
 /* iPhone 12 Portrait */
 @media only screen and (min-width: 100px) and (max-width: 844px) and (orientation: portrait) {
+  body {
+    margin: 1%;
+    margin-top: 5%;
+  }
+  
+  
   .header{
     width: 100%;
   }
@@ -323,10 +359,10 @@ fieldset {
   }
   
   .footerInfo {
-    font-family: var(--mainFont);
+    font-family: var(--fontTwo);
     color: var(--colorSix);
     font-weight: lighter;
-    font-size: 2.5vw;
+    font-size: 4vw;
     margin-bottom: 10px;
   }
   
@@ -368,7 +404,7 @@ fieldset {
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 2.3fr 1fr;
+  grid-template-columns: 2.3fr 1.4fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -386,14 +422,19 @@ fieldset {
   font-family: var(--fontTwo);
   color: var(--colorSix);
   font-weight: lighter;
-  font-size: 150%;
+  font-size: 110%;
   padding: 3%;
+}
+
+.gridItem1 h1 {
+  text-decoration: underline;
+  font-size: 100%;
 }
 
 .gridItem2 {
   flex-direction: column;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--colorOne);
   border: solid var(--colorTwo);
   border-radius: 3px;
@@ -402,8 +443,12 @@ fieldset {
   font-family: var(--fontTwo);
   color: var(--colorSix);
   font-weight: lighter;
-  font-size: 125%;
+  font-size: 100%;
   padding: 3%;
+}
+
+.gridItem2 h3 {
+  text-decoration: underline;
 }
 
   /* ----- PROFILE PRELOGIN ----- */
@@ -415,8 +460,8 @@ fieldset {
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    font-family: var(--mainFont);
-    color: var(--colorFive);
+    font-family: var(--fontTwo);
+    color: var(--colorFour);
     font-weight: lighter;
     font-size: 1.2em;
     margin-bottom: 10px;
