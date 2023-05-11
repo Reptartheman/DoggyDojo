@@ -21,7 +21,6 @@ export const QUERY_DOGS = gql`
   query getDogs {
     dogs {
       _id
-      name
       size
       activity
       training

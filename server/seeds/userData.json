@@ -7,7 +7,14 @@
     {
         "username": "Carson",
         "email": "carson@carson.com",
-        "password": "password"
+        "password": "password",
+        "dog": [
+            {
+                "size": "small",
+                "activity:": "high",
+                "training": "tall"
+            }
+        ]
     },
     {
         "username": "Katie",

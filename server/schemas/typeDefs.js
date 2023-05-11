@@ -11,7 +11,6 @@ const typeDefs = gql`
 
   type Dog {
     _id: ID
-    name: String
     size: String
     activity: String
     training: String
@@ -35,7 +34,7 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addDog(name: String!, size: String!, activity: String!, training: String!): Dog
+    addDog(size: String!, activity: String!, training: String!): Dog
     addNote (text: String!): Note
   }
 `;

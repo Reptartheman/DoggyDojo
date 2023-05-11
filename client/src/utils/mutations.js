@@ -25,9 +25,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_DOG = gql`
-  mutation addDog($name: String!, $size: String!, $activity: String!, $training: String!) {
+  mutation addDog($size: String!, $activity: String!, $training: String!) {
       _id
-      name
       size
       activity
       training
