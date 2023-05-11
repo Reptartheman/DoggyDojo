@@ -8,7 +8,6 @@ export const QUERY_USER = gql`
       email
       dogs {
         _id
-        name
         size
         activity
         training
@@ -46,7 +45,6 @@ export const QUERY_ME = gql`
       email
       dogs {
         _id
-        name
         size
         activity
         training
