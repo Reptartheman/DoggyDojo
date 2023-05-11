@@ -35,7 +35,7 @@ export const ADD_DOG = gql`
 `;
 
 export const ADD_NOTE = gql`
-  mutation addNote($noteId: ID!, $noteText: String!) {
+  mutation addNote($text: String!) {
       _id
       text
       createdAt

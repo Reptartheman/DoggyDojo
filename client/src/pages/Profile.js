@@ -17,6 +17,7 @@ import { useQuery } from '@apollo/client';
 
 import Checklist from '../components/Checklist';
 import Note from '../components/Note';
+import Quiz from '../components/Quiz';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Rocco from '../assets/Rocco.jpeg'
@@ -30,9 +31,10 @@ const Profile = () => {
     variables: { username: userParam },
   });
 
-  const user = data?.me || data?.user || {};
+  const user = Auth.getProfile()
   // navigate to personal profile page if username is yours
-  console.log(Auth.getProfile())
+  // console.log(Auth.getProfile())
+  console.log(user)
   if (Auth.loggedIn() && Auth.getProfile().username === userParam) {
     return <Navigate to="/me" />;
   }
@@ -41,7 +43,7 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  if (!user?.username) {
+  if (!user.username) {
     return (
       <div className="errorContainer">
       <h4>
@@ -56,11 +58,19 @@ const Profile = () => {
     );
   }
 
+  if (!user.dog) {
+    return(
+      <div>
+        <Quiz />
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="flex-row justify-center mb-3">
         <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-          Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+          Viewing {`${user.username}'s`} profile.
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
