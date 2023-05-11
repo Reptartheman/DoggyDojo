@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import questions from './Questions';
+import "../App.css";
 
 export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);

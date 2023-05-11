@@ -232,11 +232,11 @@ header h2 {
   font-family: var(--mainFont);
   color: var(--colorSix);
   font-weight: lighter;
-  font-size: 1.5em;
+  font-size: 3vw;
   text-align: center;
 }
 
-fieldset {
+.formLabel {
   border: medium none !important;
   margin: 0 0 10px;
   min-width: 75%;
@@ -304,6 +304,40 @@ fieldset {
 }
 :-ms-input-placeholder {
   color: #888;
+}
+
+/* Quiz Component */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 20px auto;
+  max-width: 80%;
+  height: auto;
+  border: var(--border);
+  border-radius: 7px;
+  color: var(--colorSix);
+  background-color: var(--colorFour);
+  font-family: var(--fontTwo);
+  font-size: 24px;
+}
+.quiz-contents {
+  text-align: center;
+  padding: 0 25px;
+}
+.quiz-container ul {
+  padding: 0;
+  list-style: none;
+}
+.quiz-container li {
+  border-radius: 6px;
+  background-color: #2a9d8f;
+  margin-top: 8px;
+  padding: 16px;
+  border: 3px solid white;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /* iPhone 12 Portrait */
@@ -506,36 +540,4 @@ fieldset {
   /* Your CSS styling for iPhone 12 in landscape orientation */
 }
 
-/* Quiz Component */
-.quiz-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto 20px auto;
-  max-width: 80%;
-  height: auto;
-  border: var(--border);
-  border-radius: 7px;
-  color: var(--colorSix);
-  background-color: var(--colorFour);
-  font-family: var(--fontTwo);
-  font-size: 24px;
-}
-.quiz-contents {
-  text-align: center;
-  padding: 0 25px;
-}
-.quiz-container ul {
-  padding: 0;
-  list-style: none;
-}
-.quiz-container li {
-  border-radius: 6px;
-  background-color: #2a9d8f;
-  margin-top: 8px;
-  padding: 16px;
-  border: 3px solid white;
-  border-radius: 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
+

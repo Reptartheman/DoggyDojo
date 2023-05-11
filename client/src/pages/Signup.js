@@ -54,7 +54,7 @@ export default function Signup() {
               method="post"
             >
               <h3>Sign Up</h3>
-              <fieldset>
+              <fieldset className='formLabel'>
                 <input
                   placeholder="Your name"
                   name="username"
@@ -64,7 +64,7 @@ export default function Signup() {
                   onChange={handleChange}
                 ></input>
               </fieldset>
-              <fieldset>
+              <fieldset className='formLabel'>
                 <input
                   placeholder="Email"
                   type="email"
@@ -74,7 +74,7 @@ export default function Signup() {
                   onChange={handleChange}
                 ></input>
               </fieldset>
-              <fieldset>
+              <fieldset className='formLabel'>
                 <input
                   placeholder="Password"
                   type="password"
@@ -85,7 +85,7 @@ export default function Signup() {
                 ></input>
               </fieldset>
 
-              <fieldset>
+              <fieldset className='formLabel'>
                 <button
                   name="submit"
                   type="submit"
