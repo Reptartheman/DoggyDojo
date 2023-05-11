@@ -10,6 +10,12 @@ const resolvers = {
       .populate('dogs')
       .populate('notes');
       return users;
+    },
+    user: async (parent, {username}) => {
+      const user = await User.findOne({ username })
+      .populate('dogs')
+      .populate('notes');
+      return user;
     }
   },
 

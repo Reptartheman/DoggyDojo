@@ -26,21 +26,21 @@ import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
-
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-    variables: { username: userParam },
-  });
-
   const user = Auth.getProfile()
-  // navigate to personal profile page if username is yours
+
+  const { loading, data } = useQuery(QUERY_USER, {
+    variables: { username: user.username },
+  });
+    // navigate to personal profile page if username is yours
   // console.log(Auth.getProfile())
-  console.log(user)
   if (Auth.loggedIn() && Auth.getProfile().username === userParam) {
     return <Navigate to="/me" />;
   }
 
   if (loading) {
     return <div>Loading...</div>;
+  } else {
+    console.log(data)
   }
 
   if (!user.username) {
@@ -57,9 +57,8 @@ const Profile = () => {
       </div>
     );
   }
-
-  if (user.dogs === undefined) {
-    console.log(user.dogs)
+  console.log(data.user.dogs)
+  if (!data.user.dogs.length > 0) {
     return(
       <div>
         <Quiz />
