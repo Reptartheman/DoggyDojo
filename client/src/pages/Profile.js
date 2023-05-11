@@ -16,7 +16,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import Checklist from '../components/Checklist';
-import Note from '../components/Note';
+import NoteForm from '../components/Note';
 import Quiz from '../components/Quiz';
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -58,13 +58,14 @@ const Profile = () => {
     );
   }
 
-  if (!user.dog) {
+  if (user.dogs === undefined) {
+    console.log(user.dogs)
     return(
       <div>
         <Quiz />
       </div>
     )
-  }
+  } else {
 
   return (
     <div>
@@ -77,17 +78,20 @@ const Profile = () => {
           <Checklist
           />
         </div>
+        <div>
+        <NoteForm  />
+        </div>
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '1px dotted #1a1a1a' }}
           >
-            <Note />
           </div>
         )}
       </div>
     </div>
   );
+}
 };
 
 export default Profile;
