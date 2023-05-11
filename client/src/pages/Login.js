@@ -47,14 +47,15 @@ export default function Login() {
   return (<section>
   <div className="loginContainer">  
     <Form noValidate validated={validated} onSubmit={handleFormSubmit} id="contact" action="" method="post">
+      <h3>Login</h3>
     <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
         <Alert show={error !== undefined} variant="danger">
           {error && <div>Sign up failed</div>}
         </Alert>
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor='email'>Email</Form.Label>
+        <Form.Group className='formLabel'>
+          <Form.Label htmlFor='email'></Form.Label>
           <Form.Control
             type='text'
             placeholder='Your email'
@@ -63,11 +64,11 @@ export default function Login() {
             value={userFormData.email}
             required
           />
-          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'></Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className='mb-3'>
-          <Form.Label htmlFor='password'>Password</Form.Label>
+        <Form.Group className='formLabel'>
+          <Form.Label htmlFor='password'></Form.Label>
           <Form.Control
             type='password'
             placeholder='Your password'
@@ -76,7 +77,7 @@ export default function Login() {
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+          <Form.Control.Feedback type='invalid'></Form.Control.Feedback>
         </Form.Group>
         <Button
           disabled={!(userFormData.email && userFormData.password)}
