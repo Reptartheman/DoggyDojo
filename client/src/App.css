@@ -66,7 +66,6 @@ header h2 {
 
 /* ----- FOOTER CSS ----- */
 
-
 .pagefooter {
   background-color: var(--colorTwo);
   border: var(--border);
@@ -89,18 +88,16 @@ header h2 {
   padding-top: 0.5em;
 }
 
-
 /* ------ HOME PAGE CSS ------ */
-
 
 .gridContainer {
   display: grid;
-  grid-template-columns: 2fr .5fr;
+  grid-template-columns: 2fr 0.5fr;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 0%;
-  }
+}
 
 .gridItem1 {
   display: flex;
@@ -144,7 +141,7 @@ header h2 {
   background-color: var(--colorOne);
   border: solid var(--colorTwo);
   border-radius: 3px;
-  grid-column: .5fr;
+  grid-column: 0.5fr;
   grid-row: 1fr;
   font-family: var(--fontTwo);
   color: var(--colorSix);
@@ -156,10 +153,6 @@ header h2 {
 .gridItem2 h3 {
   text-decoration: underline;
 }
-
-
-
-
 
 /* -------PROFILE CSS ------- */
 
@@ -311,23 +304,24 @@ header h2 {
 
 /* Quiz Component */
 .quiz-container {
-  display: flex;
+  text-align: center;
+  padding: 12px 25px;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: 20px auto 20px auto;
   max-width: 80%;
   height: auto;
-  border: var(--border);
   border-radius: 7px;
   color: var(--colorSix);
   background-color: var(--colorFour);
   font-family: var(--fontTwo);
   font-size: 24px;
 }
-.quiz-contents {
+/* .quiz-contents {
   text-align: center;
   padding: 0 25px;
-}
+} */
 .quiz-container ul {
   padding: 0;
   list-style: none;
@@ -339,8 +333,19 @@ header h2 {
   padding: 16px;
   border: 3px solid white;
   border-radius: 20px;
-  font-size: 20px;
-  cursor: pointer;
+  font-size: 24px;
+  /* cursor: pointer; */
+}
+.quiz-container input {
+  accent-color: var(--colorThree);
+}
+.quiz-container button {
+  border-radius: 6px;
+  color: var(--colorSix);
+  background-color: #2a9d8f;
+  font-family: var(--fontTwo);
+  font-size: 24px;
+  padding: 10px 20px;
 }
 
 /* iPhone 12 Portrait */
@@ -349,13 +354,11 @@ header h2 {
     margin: 1%;
     margin-top: 5%;
   }
-  
-  
-  .header{
+
+  .header {
     width: 100%;
   }
-  
-  
+
   header h1 {
     font-size: x-large;
     text-align: center;
@@ -383,7 +386,7 @@ header h2 {
     cursor: pointer;
   }
 
-/* ----- FOOTER ----- */
+  /* ----- FOOTER ----- */
   .pagefooter {
     width: 100%;
     background-color: var(--colorTwo);
@@ -394,7 +397,7 @@ header h2 {
     flex-direction: column;
     flex-wrap: wrap;
   }
-  
+
   .footerInfo {
     font-family: var(--fontTwo);
     color: var(--colorSix);
@@ -402,11 +405,10 @@ header h2 {
     font-size: 4vw;
     margin-bottom: 10px;
   }
-  
+
   #gitHubIcon {
     padding-top: 0.5em;
   }
-
 
   fieldset {
     border: medium none !important;
@@ -438,55 +440,54 @@ header h2 {
 
   /* ------ HOME PAGE CSS ------ */
 
-
-.gridContainer {
-  display: grid;
-  grid-template-columns: 2.3fr 1.4fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  gap: 0%;
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 2.3fr 1.4fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    gap: 0%;
   }
 
-.gridItem1 {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--colorOne);
-  border: solid var(--colorTwo);
-  border-radius: 3px;
-  grid-column: 2.3fr;
-  grid-row: 1fr;
-  font-family: var(--fontTwo);
-  color: var(--colorSix);
-  font-weight: lighter;
-  font-size: 110%;
-  padding: 3%;
-}
+  .gridItem1 {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--colorOne);
+    border: solid var(--colorTwo);
+    border-radius: 3px;
+    grid-column: 2.3fr;
+    grid-row: 1fr;
+    font-family: var(--fontTwo);
+    color: var(--colorSix);
+    font-weight: lighter;
+    font-size: 110%;
+    padding: 3%;
+  }
 
-.gridItem1 h1 {
-  text-decoration: underline;
-  font-size: 100%;
-}
+  .gridItem1 h1 {
+    text-decoration: underline;
+    font-size: 100%;
+  }
 
-.gridItem2 {
-  flex-direction: column;
-  display: flex;
-  justify-content: flex-start;
-  background-color: var(--colorOne);
-  border: solid var(--colorTwo);
-  border-radius: 3px;
-  grid-column: 1fr;
-  grid-row: 1fr;
-  font-family: var(--fontTwo);
-  color: var(--colorSix);
-  font-weight: lighter;
-  font-size: 100%;
-  padding: 3%;
-}
+  .gridItem2 {
+    flex-direction: column;
+    display: flex;
+    justify-content: flex-start;
+    background-color: var(--colorOne);
+    border: solid var(--colorTwo);
+    border-radius: 3px;
+    grid-column: 1fr;
+    grid-row: 1fr;
+    font-family: var(--fontTwo);
+    color: var(--colorSix);
+    font-weight: lighter;
+    font-size: 100%;
+    padding: 3%;
+  }
 
-.gridItem2 h3 {
-  text-decoration: underline;
-}
+  .gridItem2 h3 {
+    text-decoration: underline;
+  }
 
   /* ----- PROFILE PRELOGIN ----- */
 
@@ -503,7 +504,7 @@ header h2 {
     font-size: 1.2em;
     margin-bottom: 10px;
   }
-  
+
   .errorContainer img {
     border-radius: 20%;
     border: var(--border);
@@ -511,7 +512,7 @@ header h2 {
     height: 90vw;
     filter: opacity(70%);
   }
-  
+
   #pleaseLogin {
     position: absolute;
     top: 56%;
@@ -524,7 +525,7 @@ header h2 {
     line-height: 1.5;
     text-align: center;
   }
-  
+
   #pleaseLogin::before {
     content: '';
     position: absolute;
@@ -535,12 +536,9 @@ header h2 {
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent rgba(255, 255, 255, 0.7);
   }
-
 }
 
 /* iPhone 12 Landscape */
 @media only screen and (min-width: 844px) and (max-width: 375px) and (orientation: landscape) {
   /* Your CSS styling for iPhone 12 in landscape orientation */
 }
-
-
