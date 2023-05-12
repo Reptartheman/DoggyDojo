@@ -118,7 +118,7 @@
 
 // export default noteForm;
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 
@@ -132,12 +132,18 @@ import Auth from '../utils/auth';
 const NoteForm = () => {
   const user = Auth.getProfile()
   console.log(user)
-  const { data } = useQuery(QUERY_USER, {
+  const { loading, data } = useQuery(QUERY_USER, {
     variables: { username: user.username },
   });
   const [noteText, setNoteText] = useState({
-    text: data?.user.notes?.[0].text
+    text: "",
   });
+  useEffect(() => {
+    if (!loading && data?.user?.notes?.length > 0) {
+      setNoteText({ text: data.user.notes[0].text });
+    }
+  }, [loading, data]);
+
 
   const [addNote, { error }] = useMutation(ADD_NOTE, {
     update(cache, { data: { addNote } }) {
@@ -186,6 +192,8 @@ const NoteForm = () => {
       setNoteText(value);
     }
   };
+
+  console.log(data)
   return (
     <div className='profileHeader'>
       <h3 >How is your dog's progress?</h3>
