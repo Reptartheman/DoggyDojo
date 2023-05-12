@@ -25,13 +25,14 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_DOG = gql`
-  mutation addDog($size: String!, $activity: String!, $training: String!) {
-      _id
-      size
-      activity
-      training
-    }
-`;
+mutation Mutation($username: String!, $activity: String!, $training: String!, $size: String!) {
+  addDog(username: $username, activity: $activity, training: $training, size: $size) {
+    _id
+    size
+    activity
+    training
+  }
+}`
 
 export const ADD_NOTE = gql`
   mutation addNote($text: String!) {
