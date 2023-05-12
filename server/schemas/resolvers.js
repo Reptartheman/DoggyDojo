@@ -1,4 +1,4 @@
-const { User, Dog } = require('../models');
+const { User, Dog, Note } = require('../models');
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 
@@ -38,16 +38,14 @@ const resolvers = {
       }
     },
     
-    addNote: async (parent, {text}, context) => {
-      if (context.user) {
+    addNote: async (parent, {text, username}) => {
         const note = await Note.create({text});
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
-          { $push: { notes: note._id } },
+        await User.findOneAndUpdate(
+          { username: username },
+          { $set: { notes: note._id } },
           { new: true }
         );
         return note;
-      }
 
     },
     login: async (parent, { email, password }) => {

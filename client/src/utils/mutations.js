@@ -35,10 +35,10 @@ mutation Mutation($username: String!, $activity: String!, $training: String!, $s
 }`
 
 export const ADD_NOTE = gql`
-  mutation addNote($text: String!) {
+mutation Mutation($username: String!, $text: String!) {
+ addNote(username: $username, text: $text) {
       _id
       text
-      createdAt
-      score
-    }
+        }
+      }
 `;

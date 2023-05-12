@@ -120,35 +120,44 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import { ADD_NOTE } from '../utils/mutations';
-import { QUERY_NOTE, QUERY_ME } from '../utils/queries';
+import { QUERY_NOTE, QUERY_USER } from '../utils/queries';
+
 
 import Auth from '../utils/auth';
+// import { Note } from '../../../server/models';
 
 const NoteForm = () => {
-  const [noteText, setNoteText] = useState('');
+  const user = Auth.getProfile()
+  console.log(user)
+  const { data } = useQuery(QUERY_USER, {
+    variables: { username: user.username },
+  });
+  const [noteText, setNoteText] = useState({
+    text: data?.user.notes?.[0].text
+  });
 
   const [addNote, { error }] = useMutation(ADD_NOTE, {
     update(cache, { data: { addNote } }) {
-      try {
-        const { note } = cache.readQuery({ query: QUERY_NOTE });
+      // try {
+      //   const { note } = cache.readQuery({ query: QUERY_NOTE });
 
-        cache.writeQuery({
-          query: QUERY_NOTE,
-          data: { note: [addNote, ...note] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
+      //   cache.writeQuery({
+      //     query: QUERY_NOTE,
+      //     data: { note: [addNote, ...note] },
+      //   });
+      // } catch (e) {
+      //   console.error(e);
+      // }
 
       // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, note: [...me.note, addNote] } },
-      });
+      // const { user } = cache.readQuery({ query: QUERY_USER });
+      // cache.writeQuery({
+      //   query: QUERY_USER,
+      //   data: { user: { ...user, note: [...user.note, addNote] } },
+      // });
     },
   });
 
@@ -156,13 +165,15 @@ const NoteForm = () => {
     event.preventDefault();
 
     try {
-      await addNote({
+      console.log(noteText)
+      const theNote= await addNote({
         variables: {
-          noteText,
+          username: user.username,
+          text: noteText,
         },
       });
 
-      setNoteText('');
+      // setNoteText(theNote);
     } catch (err) {
       console.error(err);
     }
@@ -175,7 +186,6 @@ const NoteForm = () => {
       setNoteText(value);
     }
   };
-
   return (
     <div className='profileHeader'>
       <h3 >How is your dog's progress?</h3>
@@ -190,7 +200,7 @@ const NoteForm = () => {
               <textarea
                 name="noteText"
                 placeholder="Here's a new thought..."
-                value={noteText}
+                value={noteText.text}
                 className="form-input w-100"
                 onChange={handleChange}
               ></textarea>

@@ -20,7 +20,6 @@ const typeDefs = gql`
     _id: ID
     text: String
     editedAt: String
-    score: Int
   }
 
   type Auth {
@@ -37,7 +36,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addDog(username: String!, size: String!, activity: String!, training: String!): Dog
-    addNote (text: String!): Note
+    addNote (username: String!, text: String!): Note
   }
 `;
 
