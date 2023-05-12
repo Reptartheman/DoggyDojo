@@ -12,6 +12,10 @@ export const QUERY_USER = gql`
         activity
         training
       }
+      notes {
+        _id
+        text
+      }
     }
   }
 `;
@@ -31,7 +35,7 @@ export const QUERY_NOTE = gql`
   query getNote {
     note {
       _id
-      noteText
+      text
       createdAt
     }
   }

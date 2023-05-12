@@ -13,12 +13,6 @@ const noteSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  score: {
-    required: true,
-    type: Number,
-    min: 0,
-    max: 10,
-  }
 });
 
 const Note = model('Note', noteSchema);
