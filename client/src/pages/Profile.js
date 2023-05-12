@@ -40,7 +40,6 @@ const Profile = () => {
   if (loading) {
     return <div>Loading...</div>;
   } else {
-    console.log(data)
   }
 
   if (!user.username) {
@@ -57,7 +56,6 @@ const Profile = () => {
       </div>
     );
   }
-  console.log(data)
   if (!data.user.dogs.length > 0) {
     return(
       <div>
@@ -65,7 +63,7 @@ const Profile = () => {
       </div>
     )
   } else {
-
+    console.log(data.user.dogs[0].size);
   return (
     <div>
       <div className="textAreaContainer ">
@@ -74,7 +72,7 @@ const Profile = () => {
         </h2>
 
         <div className="col-12 col-md-10 mb-5">
-          <Checklist
+          <Checklist dogs = {data.user.dogs}
           />
         </div>
         <div>
