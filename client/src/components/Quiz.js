@@ -57,6 +57,7 @@ function Quiz() {
     activity: '',
     training: '',
   });
+  
   const user = Auth.getProfile()
 
   const [addDog, {error}] = useMutation(ADD_DOG);
