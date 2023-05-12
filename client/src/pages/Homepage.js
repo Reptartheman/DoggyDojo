@@ -55,13 +55,12 @@ export default function Homepage() {
           </p>
         </section>
         <aside className="gridItem2">
-          <h3>The Latest Doggy headlines!</h3>
+        <h1>Random Dog Image</h1>
           <p>
-            <h1>Random Dog Image</h1>
+            
             <img
               src={imageUrl}
               alt="random dog"
-              style={{ width: 345, height: 400 }}
             />
           </p>
           <br />

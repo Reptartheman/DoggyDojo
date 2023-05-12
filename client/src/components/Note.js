@@ -177,13 +177,13 @@ const NoteForm = () => {
   };
 
   return (
-    <div>
-      <h3>How is your dog's progress?</h3>
+    <div className='profileHeader'>
+      <h3 >How is your dog's progress?</h3>
 
       {Auth.loggedIn() ? (
         <>
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            className=""
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
@@ -192,13 +192,12 @@ const NoteForm = () => {
                 placeholder="Here's a new thought..."
                 value={noteText}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="formButton" type="submit">
                 Add Note
               </button>
             </div>
