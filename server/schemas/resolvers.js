@@ -25,11 +25,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addDog: async (parent, {size, activity, training}, context) => {
-      if (context.user) {
+
+    addDog: async (parent, {size, activity, training, username} ) => {{
         const dog = await Dog.create({size, activity, training});
-        await User.findByIdAndUpdate(
-          { _id: context.user._id },
+        console.log(dog._id)
+        await User.findOneAndUpdate(
+          { username: username },
           { $push: { dogs: dog._id } },
           { new: true }
         );

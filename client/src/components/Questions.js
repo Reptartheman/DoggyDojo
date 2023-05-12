@@ -2,6 +2,7 @@
 
 const questions = [
   {
+    name: 'size',
     text: 'What size is your dog?',
     options: [
       { id: 0, text: 'Small' },
@@ -10,6 +11,7 @@ const questions = [
     ],
   },
   {
+    name: 'activity',
     text: 'How active is your dog?',
     options: [
       { id: 0, text: 'Couch potato' },
@@ -18,6 +20,7 @@ const questions = [
     ],
   },
   {
+    name: 'training',
     text: 'What kind of training are you looking for?',
     options: [
       { id: 0, text: 'Agility' },
