@@ -91,6 +91,9 @@ function Quiz() {
       console.error(err);
     }
   };
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div className="quiz-container">
       <h1>Quiz</h1>
@@ -117,7 +120,7 @@ function Quiz() {
             </ul>
           </div>
         ))}
-        <button type="submit">Submit</button>
+        <button onClick={refreshPage} type="submit">Submit</button>
       </form>
       <h2>Selected Answers</h2>
       <ul>
