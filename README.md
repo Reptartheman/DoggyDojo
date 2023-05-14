@@ -46,9 +46,10 @@ Doggy Dojo is MERN-stack single-page web application (PWA) that allows dog owner
 * CSS  
 * JavaScript
 * React.js
+* React-Bootstrap
 * Node.js
 * Express.js
-* Express-session
+* Express-Session
 * Mongoose
 * Graphql
 * Apollo-Server-Express
