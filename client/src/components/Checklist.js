@@ -5,12 +5,15 @@ export default function Checklist(prop) {
   const dogs = prop.dogs
 
   return (
-    <div>
+    <div className='checkList'>
       {dogs.map((dog) => (
         <div key={dog._id}>
-          <h3>Dog Size: {dog.size}</h3>
-          <h3>Dog Activity: {dog.activity}</h3>
-          <h3>Dog Training: {dog.training}</h3>
+          <h3>Dog Size:</h3>
+          <p>{dog.size}</p>
+          <h3>Dog Activity:</h3>
+          <p>{dog.activity}</p>
+          <h3>Dog Training:</h3>
+          <p>{dog.training}</p>
         </div>
       ))}
     </div>

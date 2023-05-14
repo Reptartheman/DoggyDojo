@@ -64,6 +64,29 @@ header h2 {
   width: 125%;
 }
 
+.checkList {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-color: var(--colorOne);
+  border: solid var(--colorTwo);
+  border-radius: 3px;
+  font-family: var(--fontTwo);
+  color: var(--colorSix);
+  padding: 3%;
+}
+
+.checkList h3 {
+  font-size: 9vw;
+  text-decoration: underline;
+}
+
+.checkList p
+{
+  font-family: var(--fontTwo);
+  font-size: 7vw;
+
+}
 /* ----- FOOTER CSS ----- */
 
 .pagefooter {
