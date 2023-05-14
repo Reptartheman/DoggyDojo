@@ -55,7 +55,7 @@ export default function Homepage() {
           </p>
         </section>
         <aside className="gridItem2">
-        <h1>Random Dog Image</h1>
+        <h1>Who let the dogs out?!</h1>
           <p>
             
             <img
@@ -64,15 +64,13 @@ export default function Homepage() {
             />
           </p>
           <br />
-          <p>
-            Tortor pretium viverra suspendisse potenti nullam ac tortor.
-            Consectetur purus ut faucibus pulvinar elementum integer enim.
-            Habitasse platea dictumst vestibulum rhoncus est pellentesque.
-            Iaculis nunc sed augue lacus viverra vitae congue. Consequat nisl
-            vel pretium lectus quam id. At elementum eu facilisis sed. Ut ornare
-            lectus sit amet est placerat in. Hendrerit gravida rutrum quisque
-            non tellus orci.
-          </p>
+          <h3>Popular Dog Links</h3>
+            <ul>
+              <li><a href="https://www.akc.org/">American Kennel Club</a></li>
+              <li><a href="https://www.dogster.com/">Dogster</a></li>
+              <li><a href="https://thebark.com/">The Bark</a></li>
+              <li><a href="https://www.whole-dog-journal.com/">Whole Dog Journal</a></li>
+            </ul>
         </aside>
       </div>
     </>

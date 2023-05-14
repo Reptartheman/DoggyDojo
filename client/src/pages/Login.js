@@ -48,11 +48,8 @@ export default function Login() {
   <div className="loginContainer">  
     <Form noValidate validated={validated} onSubmit={handleFormSubmit} id="contact" action="" method="post">
       <h3>Login</h3>
-    <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your login credentials!
-        </Alert>
         <Alert show={error !== undefined} variant="danger">
-          {error && <div>Sign up failed</div>}
+          {error && <div>The email address or password you entered is invalid</div>}
         </Alert>
         <Form.Group className='formLabel'>
           <Form.Label htmlFor='email'></Form.Label>
