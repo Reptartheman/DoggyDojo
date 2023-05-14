@@ -122,15 +122,6 @@ function Quiz() {
         ))}
         <button onClick={refreshPage} type="submit">Submit</button>
       </form>
-      <h2>Selected Answers</h2>
-      <ul>
-        {Object.entries(answers).map(([questionIndex, answerIndex]) => (
-          <li key={questionIndex}>
-            {questions[questionIndex].text}:{' '}
-            {questions[questionIndex].options[answerIndex].text}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
