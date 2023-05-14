@@ -1,5 +1,3 @@
-// TODO: Should we be storing this data somewhere else, like in our database?
-
 const questions = [
   {
     name: 'size',

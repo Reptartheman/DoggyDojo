@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="pagefooter">
       <div id="gitHubIcon">
-        <a href="https://github.com/Reptartheman/DoggyDojo" target={'_blank'}>
+        <a href="https://github.com/Reptartheman/DoggyDojo" target={'_blank'} rel="noreferrer">
           <img src={GitHubIcon} alt="GitHubLink" width="50" height="50"></img>
         </a>
       </div>

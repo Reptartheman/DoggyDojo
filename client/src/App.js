@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
-// import Note from './components/Note';
 import Homepage from './pages/Homepage';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -10,8 +9,6 @@ import Signup from './pages/Signup';
 import { ApolloClient, ApolloProvider, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,25 +32,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // const [currentPage, setCurrentPage] = useState('Homepage');
-
-  // const renderPage = () => {
-  //   if (currentPage === 'Homepage') {
-  //     return <Homepage />;
-  //   }
-  //   if (currentPage === 'Login') {
-  //     return <Login />;
-  //   }
-  //   if (currentPage === 'Signup') {
-  //     return <Signup />;
-  //   }
-  //   if (currentPage === 'Profile') {
-  //     return <Profile />;
-  //   }
-  // };
-
-  // const handlePageChange = (page) => setCurrentPage(page);
-
   return (
     <ApolloProvider client={client}>
             <Router>
@@ -69,11 +47,6 @@ function App() {
           <Footer />
         </>
       </Router>
-    {/* <main>
-      <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-      {renderPage()}
-      <Footer />
-    </main> */}
     </ApolloProvider>
   );
 }
