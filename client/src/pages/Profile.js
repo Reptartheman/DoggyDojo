@@ -1,10 +1,13 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+
 import Checklist from "../components/Checklist";
 import NoteForm from "../components/Note";
 import Quiz from "../components/Quiz";
+
 import { QUERY_USER } from "../utils/queries";
+
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -31,9 +34,10 @@ const Profile = () => {
       </div>
     );
   } else {
+    console.log(data.user.dogs[0].size);
     return (
       <div>
-        <div className="textAreaContainer ">
+        <div className="textAreaContainer">
           <h2>Viewing {`${user.username}'s`} profile.</h2>
 
           <div className="col-12 col-md-10 mb-5">
