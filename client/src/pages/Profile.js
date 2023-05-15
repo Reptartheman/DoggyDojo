@@ -1,14 +1,10 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
-
 import Checklist from "../components/Checklist";
 import NoteForm from "../components/Note";
 import Quiz from "../components/Quiz";
-
-import { QUERY_USER, QUERY_ME } from "../utils/queries";
-import Rocco from "../assets/Rocco.jpeg";
-
+import { QUERY_USER } from "../utils/queries";
 import Auth from "../utils/auth";
 
 const Profile = () => {
@@ -28,19 +24,6 @@ const Profile = () => {
   } else {
   }
 
-  if (!user.username) {
-    return (
-      <div className="errorContainer">
-        <h4>
-          WOOF WOOF! You need to be logged in to see this. Use the navigation
-          links above to sign up or log in!
-        </h4>
-
-        <img src={Rocco}></img>
-        <p id="pleaseLogin">Please login...</p>
-      </div>
-    );
-  }
   if (!data.user.dogs.length > 0) {
     return (
       <div>
