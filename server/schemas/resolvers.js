@@ -1,22 +1,19 @@
-const { User, Dog, Note } = require('../models');
+const { User, Dog, Note } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
-
 
 const resolvers = {
   Query: {
     users: async () => {
-      const users = await User.find({})
-      .populate('dogs')
-      .populate('notes');
+      const users = await User.find({}).populate("dogs").populate("notes");
       return users;
     },
-    user: async (parent, {username}) => {
+    user: async (parent, { username }) => {
       const user = await User.findOne({ username })
-      .populate('dogs')
-      .populate('notes');
+        .populate("dogs")
+        .populate("notes");
       return user;
-    }
+    },
   },
 
   Mutation: {
@@ -26,9 +23,9 @@ const resolvers = {
       return { token, user };
     },
 
-    addDog: async (parent, {size, activity, training, username} ) => {{
-        const dog = await Dog.create({size, activity, training});
-        console.log(dog._id)
+    addDog: async (parent, { size, activity, training, username }) => {
+      {
+        const dog = await Dog.create({ size, activity, training });
         await User.findOneAndUpdate(
           { username: username },
           { $push: { dogs: dog._id } },
@@ -37,16 +34,15 @@ const resolvers = {
         return dog;
       }
     },
-    
-    addNote: async (parent, {text, username}) => {
-        const note = await Note.create({text});
-        await User.findOneAndUpdate(
-          { username: username },
-          { $set: { notes: note._id } },
-          { new: true }
-        );
-        return note;
 
+    addNote: async (parent, { text, username }) => {
+      const note = await Note.create({ text });
+      await User.findOneAndUpdate(
+        { username: username },
+        { $set: { notes: note._id } },
+        { new: true }
+      );
+      return note;
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -67,7 +63,5 @@ const resolvers = {
     },
   },
 };
-
-
 
 module.exports = resolvers;

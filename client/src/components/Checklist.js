@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
 import "../App.css";
 
+// Populates the checklist based off how many dogs arein the user's dog array
 export default function Checklist(prop) {
-  const dogs = prop.dogs
+  
+  const dogs = prop.dogs;
 
   return (
-    <div className='checkList'>
+    <div className="checkList">
       {dogs.map((dog) => (
         <div key={dog._id}>
           <h3>Dog Size:</h3>
@@ -17,5 +19,5 @@ export default function Checklist(prop) {
         </div>
       ))}
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/dateFormat');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const noteSchema = new Schema({
   text: {
@@ -15,6 +15,6 @@ const noteSchema = new Schema({
   },
 });
 
-const Note = model('Note', noteSchema);
+const Note = model("Note", noteSchema);
 
 module.exports = Note;

@@ -5,15 +5,6 @@ import Bone from "../assets/bone.png";
 const apiKey = "c33ced43e284438dabf03cc1350d3ddd";
 
 export default function Homepage() {
-  // const [news, setNews] = useState([]);
-
-  // useEffect(() => {
-  //   const url = `https://newsapi.org/v2/everything?q=dog-training&sortBy=publishedAt&pageSize=5&apiKey=${apiKey}`;
-  //   fetch(url)
-  //     .then(response => response.json())
-  //     .then(data => setNews(data.articles))
-  //     .catch(error => console.error(error));
-  // }, []);
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
@@ -28,7 +19,7 @@ export default function Homepage() {
       <div className="gridContainer">
         <section className="gridItem1">
           <div className="headingImg">
-            <img src={Bone} className="gridImg"></img>
+            <img src={Bone} className="gridImg" alt="bone"></img>
             <h1>Welcome to Doggy Dojo!</h1>
           </div>
           <p>
@@ -55,24 +46,26 @@ export default function Homepage() {
           </p>
         </section>
         <aside className="gridItem2">
-        <h1>Random Dog Image</h1>
+          <h1>Who let the dogs out?!</h1>
           <p>
-            
-            <img
-              src={imageUrl}
-              alt="random dog"
-            />
+            <img src={imageUrl} alt="random dog" />
           </p>
           <br />
-          <p>
-            Tortor pretium viverra suspendisse potenti nullam ac tortor.
-            Consectetur purus ut faucibus pulvinar elementum integer enim.
-            Habitasse platea dictumst vestibulum rhoncus est pellentesque.
-            Iaculis nunc sed augue lacus viverra vitae congue. Consequat nisl
-            vel pretium lectus quam id. At elementum eu facilisis sed. Ut ornare
-            lectus sit amet est placerat in. Hendrerit gravida rutrum quisque
-            non tellus orci.
-          </p>
+          <h3>Popular Dog Links</h3>
+          <ul>
+            <li>
+              <a href="https://www.akc.org/">American Kennel Club</a>
+            </li>
+            <li>
+              <a href="https://www.dogster.com/">Dogster</a>
+            </li>
+            <li>
+              <a href="https://thebark.com/">The Bark</a>
+            </li>
+            <li>
+              <a href="https://www.whole-dog-journal.com/">Whole Dog Journal</a>
+            </li>
+          </ul>
         </aside>
       </div>
     </>
