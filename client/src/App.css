@@ -72,19 +72,21 @@ header h2 {
   border: solid var(--colorTwo);
   border-radius: 3px;
   font-family: var(--fontTwo);
+  text-align: center;
   color: var(--colorSix);
   padding: 3%;
+  width: 20vw;
 }
 
 .checkList h3 {
-  font-size: 9vw;
+  font-size: 2.5vw;
   text-decoration: underline;
 }
 
 .checkList p
 {
   font-family: var(--fontTwo);
-  font-size: 7vw;
+  font-size: 2vw;
 
 }
 /* ----- FOOTER CSS ----- */
@@ -182,6 +184,10 @@ header h2 {
   border-radius: 7px;
 }
 
+.gridItem2 a {
+  color: var(--colorFour);
+}
+
 /* -------PROFILE CSS ------- */
 
 .textAreaContainer {
@@ -195,7 +201,7 @@ header h2 {
 .textAreaContainer h2 {
   font-family: var(--mainFont);
   color: var(--colorSix);
-  font-size: 200%;
+  font-size: 2vw;
   font-weight: lighter;
 }
 
@@ -210,7 +216,7 @@ header h2 {
 
 .profileHeader h3 {
   font-family: var(--fontTwo);
-  font-size: 200%;
+  font-size: 1.5vw;
 }
 
 .profileHeader textarea {
@@ -226,8 +232,8 @@ header h2 {
   color: var(--colorSix);
   background-color: var(--colorFour);
   font-family: var(--fontTwo);
-  font-size: 2vw;
-  width: 50%;
+  font-size: 1.5vw;
+  width: 15vw;
 }
 
 .errorContainer {
@@ -458,6 +464,31 @@ header h2 {
     font-weight: bolder;
     width: 5em;
     cursor: pointer;
+  }
+
+  .checkList {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    background-color: var(--colorOne);
+    border: solid var(--colorTwo);
+    border-radius: 3px;
+    font-family: var(--fontTwo);
+    color: var(--colorSix);
+    padding: 3%;
+    width: 40vw;
+  }
+  
+  .checkList h3 {
+    font-size: 5vw;
+    text-decoration: underline;
+  }
+  
+  .checkList p
+  {
+    font-family: var(--fontTwo);
+    font-size: 4vw;
+  
   }
 
   /* ----- FOOTER ----- */
