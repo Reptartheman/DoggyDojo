@@ -34,7 +34,6 @@ const Profile = () => {
       </div>
     );
   } else {
-    console.log(data.user.dogs[0].size);
     return (
       <div>
         <div className="textAreaContainer">
